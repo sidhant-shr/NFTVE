@@ -1,0 +1,332 @@
+html, body {
+  height: 100%;
+}
+
+.App {
+  text-align: center;
+  min-height: 100%;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+/* Canvas Grid */
+
+.canvasGridContainer {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cellBox {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  -moz-transition: -moz-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+}
+
+.cellBox:active,
+.cellBox:focus {
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  transform: scale(1.5);
+  border: 1px solid rgb(6, 6, 6);
+}
+
+.table {
+  table-layout: fixed;
+  min-width: 10px;
+  height: 10px;
+  border-spacing: 0px;
+  border-top: 1px solid #757272;
+  border-left: 1px solid #757272;
+}
+
+.tableCell {
+  min-width: 12px;
+  height: 12px;
+  padding: 0px;
+  border-bottom: 1px solid #757272;
+  border-right: 1px solid #757272;
+}
+
+/* Canvas Room */
+
+#canvasBoxContainer {
+  width: 100%;
+  height: fit-content;
+  background: rgba(244, 245, 246, 1);
+}
+
+#roomTitle {
+  font-weight: 500;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  letter-spacing: -1px;
+  color: rgba(31, 38, 59, 1);
+}
+
+/* Canvas Box */
+
+#canvasBoxWrapperContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 80px;
+}
+
+#canvasBoxWrapper {
+  width: 1000px;
+}
+
+.gridContainerCard {
+  display: flex;
+  flex-direction: column;
+  width: 464px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.cardDataRow {
+  display: flex;
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 1100px) {
+  #canvasBoxWrapper {
+    width: 700px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  #canvasBoxWrapper {
+    width: 500px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  #canvasBoxWrapper {
+    width: 390px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Homepage */
+@media screen and (min-width: 992px) {
+  #parentTopBox {
+    min-height: 501px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #topBox {
+    max-width: 1100px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #topBox {
+    max-width: 768px;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  #topBox {
+    max-width: 576px;
+  }
+}
+
+#topBox {
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 20px;
+}
+
+@media screen and (min-width: 992px) {
+  #midBox {
+    min-height: 290px;
+  }
+}
+
+#midBox #lowBox {
+  flex: "1 1";
+}
+
+#midBox #lowBox #homePageHeader {
+  line-height: 140%;
+}
+
+#midBox #buttonContainer #joinRoomButton {
+  width: 152px;
+  height: 55px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 140%;
+  border: none;
+  transition: 0.1s ease;
+  background-color: #111;
+  margin-right: 12px;
+}
+
+.feedContainer {
+  background-color: #fff;
+}
+
+a {
+  color: black;
+  text-decoration: none !important;
+}
+
+#roomLink #profileLink {
+  color: "#0057ff";
+}
+
+#viewAllRoomButton:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#twitterIcon:hover {
+  color: rgb(29, 155, 240);
+}
+
+#githubIcon:hover {
+  color: black;
+}
+
+#instagramIcon:hover {
+  color: white;
+  border-radius: 5px;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+#footerSiteLogo {
+  height: 70px;
+}
+
+#tutorialVideo {
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+#siteNameInAbout {
+  font-weight: 700;
+}
+
+@media screen and (max-width: 1350px) {
+  #introContainer {
+    display: block;
+  }
+
+  #introText {
+    text-align: center;
+  }
+
+  #totalTokenAmount {
+    margin-left: 50px;
+  }
+
+  #contributorCaption {
+    margin-left: 50px;
+  }
+
+  #contactContainer {
+    margin-left: 50px;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  #aboutDivider1 {
+    display: none;
+  }
+
+  #aboutDivider2 {
+    display: none;
+  }
+
+  #aboutDivider3 {
+    display: none;
+  }
+}
+
+#essentialLink1 #essentialLink2 {
+  font-weight: 600;
+  color: black;
+}
+
+#sayanImage {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#errorImg {
+  height: 600px;
+}
+
+.typingCursor {
+  animation-name: blink;
+  animation-duration: 1200ms;
+  animation-iteration-count: infinite;
+  opacity: 1;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  #contactContainer {
+    margin-left: auto;
+    justify-content: center;
+  }
+}

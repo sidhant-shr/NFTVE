@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+NFTVERSE provides a gamified way to create and own NFTs. The users compete and/or collaborate in a decentralized and permissionless manner to create pixelated art where each pixel represents a fractional nft of the overall artwork.  
+Users bid on the pixels to gain ownership, allowing them to color that pixel. The bid amount goes to the last owner of that pixel. Thus in this way, each participant earns a profit from the sale and/or gets to own the fractional nft, which is a benefit of our Play-to-Earn (P2E) model.  
+Usually, the NFTs obtained from the P2E games start losing their value once the game ends. To overcome this issue, We came up with a novel approach of having a dynamic state in our NFTs which opens up the possibility of a secondary market.  
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+We have developed this application using ink! smart contract, polkadot.js library and React.
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+NFTVERSE provides an innovative way for users to collaboratively create digital artwork and own pieces of it as NFTs. The artwork is created on a 32x32 grid (aka canvas) and the whole process is divided into three stages:
 
-### `npm start`
+### Creation phase
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+A user can create a new canvas by paying a small fee which goes to the developers. The creator needs to specify the following parameters:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* _Title:_ It is the heading of the canvas
 
-### `npm test`
+* _Description:_ A brief information about this canvas
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* _Base Price:_ It is the minimum price of each pixel the first bidder needs to pay to gain its ownership.
 
-### `npm run build`
+* _Premium Percentage:_ It is the percentage surplus of the last bid price of a given pixel, which a user needs to pay to capture it from its current owner.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* _Start Time:_ The start time of the bidding phase
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* _End Time:_ The end time of the bidding phase
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* _Is Dynamic:_ If enabled, the pixel owners can change the pixel colors even after the bidding phase. 
 
-### `npm run eject`
+> All the information can be updated prior to the start of the bidding phase
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Bidding phase
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+During this period, Users bid on the pixels to gain ownership, allowing them to color that pixel. If a pixel doesn’t have any current owner, a user can pay the base price (or more) to become the first owner of that pixel otherwise they must bid at least the sum of the current pixel price plus the premium percentage amount to become the new owner of that pixel. A commission fee is deducted from the bid amount and the rest is transferred to the previous owner (or to the creator in case it was the first bid of that pixel). In this way, Every time a bid is placed successfully, the previous owner/creator of that pixel earns a profit.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+This method of bidding on the pixels (NFT) helps with the price discovery of the artwork.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Post phase
 
-## Learn More
+The individual pixels collectively form an NFT artwork and therefore pixel owners have fractional ownership of the art. If the canvas creator had enabled dynamic NFT, then owners can still change the color of the pixels they own even after the bidding phase. Having such a feature enables the NFTs to appreciate/retain their value in the secondary market since the NFTs can be purchased to modify the artwork and it evolves over time.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Economic Model
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* Canvas creators pays creation fees which prevents spam and also incentivises developers for the work.
 
-### Code Splitting
+* When a cell is purchased for the first time, the bid amount goes to the creator.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* When a user captures a cell which is owned by another user, The bid value (contains atleast a pre-specified percentage premium over last cell price) goes to the last owner. In this way, last owner profits from the premium.
 
-### Analyzing the Bundle Size
+* Each successful capture cell is charged a commission fee which goes to the developers.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Summary:
 
-### Making a Progressive Web App
+* Developers earn when users interact with the dapp in the form of canvas creation fees and capture cell commission charges.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+* Canvas creator earns when users buys their canvas pixels.
 
-### Advanced Configuration
+* Intermediate owner earns profit from the premium.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+* Last owner gets ownership of the NFT
 
-### Deployment
+This kind of auction helps with the price discovery of the NFTs.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Novelty/Originality
+  
+* introduces the idea of collaborative art - Users can create digital artwork together in a decentralised and permissionless manner.
 
-### `npm run build` fails to minify
+* uses the novel idea of fractionalizing the digital asset (artwork) into multiple NFTs.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* integrates the idea of Dynamic NFT, where the state of digital assets represented by the NFT can be changed even after minting.
+
+
+
+
+
+## Tech Stack
+
+* Ink! smart contract
+* PolkadotJS library
+* React
+* MUI (Material UI)
+
+
